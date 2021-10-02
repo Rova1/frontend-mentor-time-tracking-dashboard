@@ -1,0 +1,184 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+/* Variables */
+:root {
+    --radius: 12px;
+}
+
+/* Clearfix */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Rubik;
+    background-color: hsl(226, 43%, 10%);
+    color: white;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 22px;
+    margin-top: 3px;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: 300;
+}
+
+p {
+    font-size: 14px;
+    color: hsl(236, 100%, 87%);
+}
+
+.dashboard {
+    width: 90%;
+    margin: 50px auto;
+    display: grid;
+    grid-template: repeat(7, auto) / auto;
+    grid-gap: 15px;
+}
+
+
+.overview {
+    background-color: hsl(235, 46%, 20%);
+    border-radius: var(--radius);
+}
+
+.user {
+    background-color: hsl(246, 80%, 60%);
+    border-radius: var(--radius);
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user img {
+    width: 60px;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.time-selector {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.selector:hover {
+    cursor: pointer;
+}
+
+.selector:hover, .active {
+    color: white;
+}
+
+.card {
+    border-radius: var(--radius);
+    position: relative;
+    padding-top: 30px;
+    overflow: hidden;
+}
+
+.card:nth-child(2) {
+    background-color: hsl(15, 100%, 70%);
+}
+.card:nth-child(3) {
+    background-color: hsl(195, 74%, 62%);
+}
+.card:nth-child(4) {
+    background-color: hsl(348, 100%, 68%);
+}
+.card:nth-child(5) {
+    background-color:  hsl(145, 58%, 55%);
+}
+.card:nth-child(6) {
+    background-color: hsl(264, 64%, 52%);
+}
+.card:nth-child(7) {
+    background-color: hsl(43, 84%, 65%);
+}
+
+.card > img {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    z-index: 2;
+}
+
+.card-content {
+    background-color: hsl(235, 46%, 20%);
+    border-radius: var(--radius);
+    padding: 20px;
+    position: relative;
+    z-index: 3;
+}
+
+.card-content > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media only screen and (min-width: 1100px) {
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .dashboard {
+        margin: 0;
+        width: auto;
+        grid-template: auto auto / repeat(4, 200px);
+    }
+    .overview {
+        grid-area: 1 / 1 / 3 / 2;
+    }
+
+    .user {
+        display: block;
+        padding: 20px 20px;
+    }
+
+    .user img {
+        margin-bottom: 30px;
+    }
+
+    .time-selector {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        padding: 20px;
+    }
+
+    .selector {
+        margin-bottom: 20px;
+    }
+
+    .selector:last-child {
+        margin-bottom: 0;
+    }
+
+    .card-content > div:last-of-type {
+        display: block;
+    }
+
+    .card-content > div:first-of-type,
+    h3 {
+        margin-bottom: 10px;
+    }
+    
+}
